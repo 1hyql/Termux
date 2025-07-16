@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termux交流社区</title>
-    <link rel="canonical" href="https://twilightsnow2009.github.io/Termux/">
     <style>
         /* 全局样式 */
         * {
@@ -302,205 +301,175 @@
             margin-top: 50px;
         }
 
-                /* 嵌入视频样式 */
-        .bilibili-video {
-            text-align: center;
-            margin: 50px auto;
-        }
+/* 嵌入视频样式 */
+.bilibili-video {
+    text-align: center;
+    margin: 50px auto;
+}
 
-        .video-iframe {
-            width: 100%; /* 宽度自适应 */
-            height: 100%; /* 高度自适应 */
-            aspect-ratio: 16 / 9; /* 保持16:9的宽高比 */
-            border: none;
-            margin: 0 auto;
-            display: block;
-        }
+.video-iframe {
+    width: 100%; /* 宽度自适应 */
+    height: 100%; /* 高度自适应 */
+    aspect-ratio: 16 / 9; /* 保持16:9的宽高比 */
+    border: none;
+    margin: 0 auto;
+    display: block;
+}
 
-        /* 响应式媒体查询 */
-        @media (max-width: 480px) {
-            .intro h1 {
-                font-size: 2rem;
-            }
+/* 响应式媒体查询 */
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 2rem;
+    }
 
-            .feature-card {
-                padding: 20px;
-            }
-        }
-    </style>
+    .feature-card {
+        padding: 20px;
+    }
+}
+</style>
 </head>
 <body>
-
-    <script>
-    // 检查是否已经记录了用户的选择
-    if (!localStorage.getItem('skipPrompt')) {
-        // 弹出第一次提示框
-        function showPrompt() {
-            const firstResponse = confirm("检测到您正在访问『Termux交流社区』镜像站点，为了功能的完整性，是否跳转至主站？");
-            if (firstResponse) {
-                // 如果用户选择跳转主站
-                window.location.href = "https://twilightsnow2009.github.io/Termux/";
-            } else {
-                // 如果用户第一次选择“取消”，进入第二次提示框
-                const secondResponse = confirm("检测到您拒绝跳转，请再次确认（本次确认成功后将永不弹窗）。");
-                if (secondResponse) {
-                    // 如果用户再次选择“确认”，弹出提示框并记录选择
-                    alert("您已选择继续留在镜像网站。");
-                    // 记录用户的选择，以后不再弹出提示框
-                    localStorage.setItem('skipPrompt', 'true');
-                } else {
-                    // 如果用户再次选择“取消”，页面跳转到主站
-                    window.location.href = "https://twilightsnow2009.github.io/Termux/";
-                }
-            }
-        }
-
-        // 页面加载完成后立即弹出第一次提示框
-        window.onload = showPrompt;
-    }
-    </script>
-    
-
     <!-- 汉堡菜单 -->
-    <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+<div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="menu" id="menu">
+    <button class="close-btn" id="closeMenu">✕</button>
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#announcement">公告</a></li>
+        <li><a href="#contact">联系我们</a></li>
+    </ul>
+</div>
+
+<div class="content-container">
+    <!-- 引导部分 -->
+    <div class="intro">
+        <h1>Termux交流社区</h1>
+        <p>Termux交流社区是一个专为Android Termux用户量身打造的互动交流平台。</p>
+        <p>我们致力于打造一个活跃的、有深度的学习环境，让每一位成员都能在交流中不断进步，掌握更多关于Termux的高级技巧和实用功能。</p>
+        <p>无论是初学者还是资深玩家，都能在这里找到属于自己的位置，与志同道合的伙伴共同探索Android上的Linux世界。</p>
     </div>
 
-    <div class="menu" id="menu">
-        <button class="close-btn" id="closeMenu">✕</button>
-        <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#announcement">公告</a></li>
-            <li><a href="#contact">联系我们</a></li>
-        </ul>
+    <!-- 功能特色 -->
+    <div class="features">
+        <h2>在Termux交流社区，你可以：</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>参与技术讨论</h3>
+                <p>与同行们交流使用心得，解决遇到的问题。</p>
+            </div>
+            <div class="feature-card">
+                <h3>分享原创内容</h3>
+                <p>分享自己的脚本、工具、项目等，展示个人才华和技术实力。</p>
+            </div>
+            <div class="feature-card">
+                <h3>共同成长</h3>
+                <p>无论你是新手还是专家，我们都热忱欢迎你的加入。</p>
+            </div>
+        </div>
     </div>
 
-    <div class="content-container">
-        <!-- 引导部分 -->
-        <div class="intro">
-            <h1>Termux交流社区</h1>
-            <p>Termux交流社区是一个专为Android Termux用户量身打造的互动交流平台。</p>
-            <p>我们致力于打造一个活跃的、有深度的学习环境，让每一位成员都能在交流中不断进步，掌握更多关于Termux的高级技巧和实用功能。</p>
-            <p>无论是初学者还是资深玩家，都能在这里找到属于自己的位置，与志同道合的伙伴共同探索Android上的Linux世界。</p>
-        </div>
+    <!-- 关于我们 -->
+    <div class="about" id="about">
+        <h2>关于我们</h2>
+        <p>在Termux交流社区，让我们一起学习、一起成长，共同构建一个更加繁荣的Termux生态系统。</p>
+        <a href="https://pd.qq.com/s/fsp0rzag2?b=9" class="about-btn">了解更多</a>
+    </div>
 
-        <!-- 功能特色 -->
-        <div class="features">
-            <h2>在Termux交流社区，你可以：</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>参与技术讨论</h3>
-                    <p>与同行们交流使用心得，解决遇到的问题。</p>
-                </div>
-                <div class="feature-card">
-                    <h3>分享原创内容</h3>
-                    <p>分享自己的脚本、工具、项目等，展示个人才华和技术实力。</p>
-                </div>
-                <div class="feature-card">
-                    <h3>共同成长</h3>
-                    <p>无论你是新手还是专家，我们都热忱欢迎你的加入。</p>
-                </div>
+    <!-- 嵌入哔哩哔哩视频 -->
+    <div class="bilibili-video">
+        <h2>Termux交流社区视频</h2>
+        <iframe class="video-iframe" src="https://player.bilibili.com/player.html?bvid=BV1U43szcEzr&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+
+    <!-- 公告 -->
+    <div class="announcement" id="announcement">
+        <h2>公告</h2>
+        <div class="announcement-content">
+            <p>Termux交流社区正在壮大，现急需有志之士加入我们的核心团队！以下部门现正火热招新！</p>
+            <p>一、宣传部</p>
+            <p>- 工作内容：制作宣传海报、视频，推广社区活动，提升社区知名度。</p>
+            <p>- 要求：有创意，熟悉新媒体平台。</p>
+            <p>二、运营部</p>
+            <p>- 工作内容：策划社区活动，组织线上线下交流，提升社区活跃度。</p>
+            <p>- 要求：善于组织协调。</p>
+            <p>**注意：目前社区处于发展阶段，没有工资，纯靠热爱，希望你有足够的热情和责任感！**</p>
+            <p>报名方式：加入QQ群(369925819)</p>
+            <p>期待你的加入，让我们一起打造更棒的Termux交流社区！</p>
+            <p>2025年7月6日</p>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div class="contact" id="contact">
+        <h2>联系我们</h2>
+        <p>如果您有任何问题或建议，请随时联系我们。</p>
+        <p>QQ群：369925819</p>
+    </div>
+
+    <!-- 社区链接 -->
+    <div class="community-links">
+        <h2>加入我们</h2>
+        <div class="links-container">
+            <div class="link-card">
+                <h3>哔哩哔哩</h3>
+                <p>Termux交流社区的空间</p>
+                <a href="https://m.bilibili.com/space/1254655627" target="_blank">访问哔哩哔哩</a>
+            </div>
+            <div class="link-card">
+                <h3>QQ群</h3>
+                <p>Termux交流社区官方群</p>
+                <a href="https://qm.qq.com/q/xhvJx1qLVm" target="_blank">加入QQ群</a>
+            </div>
+            <div class="link-card">
+                <h3>QQ频道</h3>
+                <p>Termux交流社区腾讯频道</p>
+                <a href="https://pd.qq.com/s/8b4en8mu0?b=9" target="_blank">加入QQ频道</a>
+            </div>
+            <div class="link-card">
+                <h3>CSDN博客</h3>
+                <p>Termux交流社区的博客</p>
+                <a href="https://blog.csdn.net/2403_88248420" target="_blank">访问CSDN博客</a>
+            </div>
+            <div class="link-card">
+                <h3>微信公众号</h3>
+                <p>Termux技术交流</p>
             </div>
         </div>
+    </div>
 
-        <!-- 关于我们 -->
-        <div class="about" id="about">
-            <h2>关于我们</h2>
-            <p>在Termux交流社区，让我们一起学习、一起成长，共同构建一个更加繁荣的Termux生态系统。</p>
-            <a href="https://pd.qq.com/s/fsp0rzag2?b=9" class="about-btn">了解更多</a>
-        </div>
+     <!-- 页脚 -->
+  <footer>
+    <p>&copy; 2025 Termux交流社区. 保留所有权利.</p>
+    <p>网站已运行：<span id="uptime"></span></p>
+    <p>该网站为镜像站，主站链接：<a href="https://twilightsnow2009.github.io/Termux" target="_blank">主站</a></p>
+  </footer>
 
-        <!-- 嵌入哔哩哔哩视频 -->
-        <div class="bilibili-video">
-            <h2>Termux交流社区视频</h2>
-            <iframe class="video-iframe" src="https://player.bilibili.com/player.html?bvid=BV1U43szcEzr&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-        </div>
+<script>
+    // 汉堡菜单功能
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    const closeMenu = document.getElementById('closeMenu');
 
-        <!-- 公告 -->
-        <div class="announcement" id="announcement">
-            <h2>公告</h2>
-            <div class="announcement-content">
-                <p>Termux交流社区正在壮大，现急需有志之士加入我们的核心团队！以下部门现正火热招新！</p>
-                <p>一、宣传部</p>
-                <p>- 工作内容：制作宣传海报、视频，推广社区活动，提升社区知名度。</p>
-                <p>- 要求：有创意，熟悉新媒体平台。</p>
-                <p>二、运营部</p>
-                <p>- 工作内容：策划社区活动，组织线上线下交流，提升社区活跃度。</p>
-                <p>- 要求：善于组织协调。</p>
-                <p>**注意：目前社区处于发展阶段，没有工资，纯靠热爱，希望你有足够的热情和责任感！**</p>
-                <p>报名方式：加入QQ群(369925819)</p>
-                <p>期待你的加入，让我们一起打造更棒的Termux交流社区！</p>
-                <p>2025年7月6日</p>
-            </div>
-        </div>
+    menuToggle.addEventListener('click', () => {
+        menu.classList.add('active');
+    });
 
-        <!-- 联系我们 -->
-        <div class="contact" id="contact">
-            <h2>联系我们</h2>
-            <p>如果您有任何问题或建议，请随时联系我们。</p>
-            <p>QQ群：369925819</p>
-        </div>
+    closeMenu.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
 
-        <!-- 社区链接 -->
-        <div class="community-links">
-            <h2>加入我们</h2>
-            <div class="links-container">
-                <div class="link-card">
-                    <h3>哔哩哔哩</h3>
-                    <p>Termux交流社区的空间</p>
-                    <a href="https://m.bilibili.com/space/1254655627" target="_blank">访问哔哩哔哩</a>
-                </div>
-                <div class="link-card">
-                    <h3>QQ群</h3>
-                    <p>Termux交流社区官方群</p>
-                    <a href="https://qm.qq.com/q/xhvJx1qLVm" target="_blank">加入QQ群</a>
-                </div>
-                <div class="link-card">
-                    <h3>QQ频道</h3>
-                    <p>Termux交流社区腾讯频道</p>
-                    <a href="https://pd.qq.com/s/8b4en8mu0?b=9" target="_blank">加入QQ频道</a>
-                </div>
-                <div class="link-card">
-                    <h3>CSDN博客</h3>
-                    <p>Termux交流社区的博客</p>
-                    <a href="https://blog.csdn.net/2403_88248420" target="_blank">访问CSDN博客</a>
-                </div>
-                <div class="link-card">
-                    <h3>微信公众号</h3>
-                    <p>Termux技术交流</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 页脚 -->
-        <footer>
-            <p>&copy; 2025 Termux交流社区. 保留所有权利.</p>
-            <p>该网站为镜像站，主站链接：<a href="https://twilightsnow2009.github.io/Termux/" target="_blank">主站</a></p>
-        </footer>
-
-    <script>
-        // 汉堡菜单功能
-        const menuToggle = document.getElementById('menuToggle');
-        const menu = document.getElementById('menu');
-        const closeMenu = document.getElementById('closeMenu');
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.add('active');
-        });
-
-        closeMenu.addEventListener('click', () => {
+    // 点击空白区域关闭菜单
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target) && menu.classList.contains('active')) {
             menu.classList.remove('active');
-        });
-
-        // 点击空白区域关闭菜单
-        document.addEventListener('click', (event) => {
-            if (!menu.contains(event.target) && !menuToggle.contains(event.target) && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-            }
-        });
-    </script>
+        }
+    });
+</script>
 </body>
-</html>
+    </html>
